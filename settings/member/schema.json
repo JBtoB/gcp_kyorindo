@@ -1,0 +1,37 @@
+[
+  {
+    "name": "member_code", 
+    "type": "STRING",
+    "mode": "REQUIRED"
+  }, 
+  {
+    "name": "sex", 
+    "type": "STRING",
+    "mode": "REQUIRED"
+  }, 
+  {
+    "name": "birthyear", 
+    "type": "INT64",
+    "mode": "REQUIRED"
+  }, 
+  {
+    "name": "zip", 
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }, 
+  {
+    "name": "belong", 
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }, 
+  {
+    "name": "admission_date", 
+    "type": "INT64",
+    "mode": "NULLABLE"
+  }, 
+  {
+    "name": "dummy", 
+    "type": "STRING",
+    "mode": "REQUIRED"
+  }
+]

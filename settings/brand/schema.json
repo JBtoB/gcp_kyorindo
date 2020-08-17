@@ -1,0 +1,17 @@
+[
+    {
+      "name": "brand_code", 
+      "type": "STRING",
+      "mode": "REQUIRED"
+    }, 
+    {
+      "name": "brand_name", 
+      "type": "STRING",
+      "mode": "REQUIRED"
+    }, 
+    {
+      "name": "dummy", 
+      "type": "STRING",
+      "mode": "REQUIRED"
+    }
+  ]

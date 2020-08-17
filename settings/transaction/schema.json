@@ -1,0 +1,97 @@
+[
+  {
+    "name": "purchase_date", 
+    "type": "STRING",
+    "mode": "REQUIRED"
+  }, 
+  {
+    "name": "purchase_time", 
+    "type": "STRING",
+    "mode": "REQUIRED"
+  }, 
+  {
+    "name": "office", 
+    "type": "STRING",
+    "mode": "REQUIRED"
+  }, 
+  {
+    "name": "member", 
+    "type": "STRING",
+    "mode": "REQUIRED"
+  }, 
+  {
+    "name": "jan_code", 
+    "type": "STRING",
+    "mode": "REQUIRED"
+  }, 
+  {
+    "name": "amount", 
+    "type": "NUMERIC",
+    "mode": "REQUIRED"
+  }, 
+  {
+    "name": "quantity", 
+    "type": "NUMERIC",
+    "mode": "REQUIRED"
+  }, 
+  {
+    "name": "profit", 
+    "type": "NUMERIC",
+    "mode": "REQUIRED"
+  }, 
+  {
+    "name": "posnumber", 
+    "type": "STRING",
+    "mode": "REQUIRED"
+  }, 
+  {
+    "name": "sheetnumber", 
+    "type": "STRING",
+    "mode": "REQUIRED"
+  }, 
+  {
+    "name": "class", 
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "excode1", 
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "excode2", 
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "excode3", 
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "excode4", 
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "excode5", 
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "excode6", 
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "excode7", 
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "dummy", 
+    "type": "STRING",
+    "mode": "REQUIRED"
+  }
+]

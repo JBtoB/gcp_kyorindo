@@ -1,0 +1,42 @@
+[
+  {
+    "name": "jan_code", 
+    "type": "STRING",
+    "mode": "REQUIRED"
+  }, 
+  {
+    "name": "jan_name", 
+    "type": "STRING",
+    "mode": "REQUIRED"
+  }, 
+  {
+    "name": "item_code", 
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }, 
+  {
+    "name": "jbtob_chk", 
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }, 
+  {
+    "name": "maker_code", 
+    "type": "STRING",
+    "mode": "NULLABLE"
+  }, 
+  {
+    "name": "brand_code", 
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "JICFS_item", 
+    "type": "STRING",
+    "mode": "NULLABLE"
+  },
+  {
+    "name": "dummy", 
+    "type": "STRING",
+    "mode": "REQUIRED"
+  }
+]

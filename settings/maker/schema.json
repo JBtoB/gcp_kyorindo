@@ -1,0 +1,17 @@
+[
+  {
+    "name": "maker_code", 
+    "type": "STRING",
+    "mode": "REQUIRED"
+  }, 
+  {
+    "name": "maker_name", 
+    "type": "STRING",
+    "mode": "REQUIRED"
+  }, 
+  {
+    "name": "dummy", 
+    "type": "STRING",
+    "mode": "REQUIRED"
+  }
+]

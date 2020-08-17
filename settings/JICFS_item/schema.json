@@ -1,0 +1,47 @@
+[
+    {
+      "name": "JICFS_code", 
+      "type": "STRING",
+      "mode": "REQUIRED"
+    }, 
+    {
+      "name": "JICFS_code_name", 
+      "type": "STRING",
+      "mode": "REQUIRED"
+    }, 
+    {
+      "name": "JICFS_code1", 
+      "type": "STRING",
+      "mode": "REQUIRED"
+    }, 
+    {
+      "name": "JICFS_code1_name", 
+      "type": "STRING",
+      "mode": "REQUIRED"
+    },
+    {
+      "name": "JICFS_code2", 
+      "type": "STRING",
+      "mode": "REQUIRED"
+    }, 
+    {    
+      "name": "JICFS_code2_name", 
+      "type": "STRING",
+      "mode": "REQUIRED"
+    },
+    {
+      "name": "JICFS_code3", 
+      "type": "STRING",
+      "mode": "REQUIRED"
+    }, 
+    {
+      "name": "JICFS_code3_name", 
+      "type": "STRING",
+      "mode": "REQUIRED"
+    },           
+    {
+      "name": "dummy", 
+      "type": "STRING",
+      "mode": "REQUIRED"
+    }
+  ]

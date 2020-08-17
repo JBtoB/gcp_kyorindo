@@ -1,0 +1,18 @@
+{
+	"destinationTable": {
+	"datasetId": "looker",
+	"tableId": "JICFS_item"
+	},
+	"sourceFormat": "CSV",
+	"autodetect": "false",
+	"createDisposition": "CREATE_IF_NEEDED",
+	"writeDisposition": "WRITE_TRUNCATE",
+	"skipLeadingRows": "0",
+	"encoding": "UTF-8",
+	"maxBadRecords": "70",
+	"allowQuotedNewlines": "true",
+	"allowJaggedRows": "true",
+	"ignoreUnknownValues": "true",
+	"nullMarker": "",
+	"quote": "'"
+}
