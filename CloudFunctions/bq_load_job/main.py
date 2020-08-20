@@ -19,6 +19,11 @@ def main(event, context):
 
     bucket_name = event["bucket"]
     file_name = event["name"]
+    file_size = event["size"]
+
+    #アップロードされたGCS Objectのサイズが100bytes以下のときアラートログを出力
+    size_threshold = 100
+    check_file_size(file_name, file_size, size_threshold)
 
     # アップロードされたGCS ObjectがBigQueryにアップロードするものかのチェック
     uri = valid_dir(bucket_name, file_name)
@@ -224,3 +229,19 @@ def get_enviroment_value(name):
         logging.error("Enviroment Value {} is not set".format(name))
 
     return env_value
+
+
+def check_file_size(name, size, threshold):
+    '''
+    GCSにアップロードされたObjectのサイズが閾値以下のときアラートログを出力する関数
+
+    Args:
+    name (STRING) : GCSにアップロードされたオブジェクト名
+    size (STRING) : GCSにアップロードされたオブジェクトのサイズ
+    threshold (int) : サイズの閾値
+    '''
+
+    if int(size) <= threshold:
+        logging.warning("Size of {} is {} bytes and not greater than threshold of {} bytes.".format(name, size, threshold))
+
+    return
