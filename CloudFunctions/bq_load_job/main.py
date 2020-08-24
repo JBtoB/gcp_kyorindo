@@ -15,14 +15,16 @@ def main(event, context):
 
     # -----------------------------------------------環境変数
     project_id = get_enviroment_value("GCP_PROJECT")
+    # -----------------------------------------------変数
+    # GCS Objectのサイズの閾値
+    size_threshold = 100
     # -----------------------------------------------
 
     bucket_name = event["bucket"]
     file_name = event["name"]
     file_size = event["size"]
 
-    #アップロードされたGCS Objectのサイズが100bytes以下のときアラートログを出力
-    size_threshold = 100
+    # アップロードされたGCS Objectのサイズが100bytes以下のときアラートログを出力
     check_file_size(file_name, file_size, size_threshold)
 
     # アップロードされたGCS ObjectがBigQueryにアップロードするものかのチェック
