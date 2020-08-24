@@ -16,28 +16,33 @@ def main(request):
     # -----------------------------------------------環境変数
     project_id = get_enviroment_value("GCP_PROJECT")
     # -----------------------------------------------Schedulerに設定した変数
+    target_project_id = get_request_value_or_raise(request,"target_project_id")
     source_dataset = get_request_value_or_raise(request,"source_dataset")
     target_dataset = get_request_value_or_raise(request,"target_dataset")
     table_names = get_request_value_or_raise(request, "table_names")
     # -----------------------------------------------
     
-
+    #コピー元のclientを作成
     client = bigquery.Client(project_id)
 
+    #コピー先のclientを作成
+    target_client = bigquery.Client(target_project_id)
+
     # コピー先のデータセットがあるかの確認、なければ作成
-    create_dataset(client, target_dataset)
+    create_dataset(target_client, target_dataset)
    
     # コピージョブの実行
-    copy_tables(client, project_id, source_dataset, target_dataset, table_names)
+    copy_tables(client, project_id, target_project_id, source_dataset, target_dataset, table_names)
 
 
-def copy_tables(client, project_id, source_dataset, target_dataset, table_names):
+def copy_tables(client, project_id, target_project_id, source_dataset, target_dataset, table_names):
     '''
     テーブルコピーを実施する関数
 
     Args:
     client (google.cloud.bigquery.client.Client): bigqueryのクライアント
-    project_id (STRING): GCPのプロジェクトID
+    project_id (STRING): コピー元のGCPのプロジェクトID
+    target_project_id (STRING): コピー先GCPのプロジェクトID
     source_dataset (STRING): コピー元のデータセット名
     target_dataset (STRING): コピー先のデータセット名
     table_names (list): コピーするテーブル名のリスト
@@ -54,7 +59,7 @@ def copy_tables(client, project_id, source_dataset, target_dataset, table_names)
     
         # コピー元とコピー先の名前の作成
         source_table = "{}.{}.{}".format(project_id,source_dataset,table_name)
-        target_table = "{}.{}.{}".format(project_id,target_dataset,table_name)
+        target_table = "{}.{}.{}".format(target_project_id,target_dataset,table_name)
         try:
             # コピー元のテーブルがあるかの確認。なければ、ログに出力
             table_ref = client.dataset(source_dataset).table(table_name)
