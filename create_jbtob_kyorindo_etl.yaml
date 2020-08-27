@@ -81,7 +81,7 @@ steps:
     --time-zone=Asia/Tokyo \
     --message-body="{\"target_project_id\":\"jbtob-looker-kyorindo-$(cat _ENV)\", \"target_dataset\":\"looker_backup\", \"source_dataset\":\"looker\",\"table_names\":[\"brand\",\"excode1\",\"excode2\",\"item\",\"jan\",\"maker\",\"member\",\"office\",\"old_new_id\",\"JICFS_item\",\"transaction\",\"transaction_summary\",\"update\"]}"  \
     --project=jbtob-looker-$(cat _END_OF_PROJECT_ID) \
-    --oidc-service-account-email=cloud-functions-invoke@jbtob-looker-kyorindo-stg.iam.gserviceaccount.com
+    --oidc-service-account-email=cloud-functions-invoke@jbtob-looker-$(cat _END_OF_PROJECT_ID).iam.gserviceaccount.com
 
 # Cloud Scheduler copy_job_${cat _ENV)_to_pocのデプロイ
 - name: 'gcr.io/cloud-builders/gcloud'
@@ -96,7 +96,7 @@ steps:
     --time-zone=Asia/Tokyo \
     --message-body="{\"target_project_id\":\"jbtob-looker-kyorindo-poc\", \"target_dataset\":\"looker\", \"source_dataset\":\"looker\",\"table_names\":[\"brand\",\"excode1\",\"excode2\",\"item\",\"jan\",\"maker\",\"member\",\"office\",\"old_new_id\",\"JICFS_item\",\"transaction\",\"transaction_summary\",\"update\"]}"  \
     --project=jbtob-looker-$(cat _END_OF_PROJECT_ID) \
-    --oidc-service-account-email=cloud-functions-invoke@jbtob-looker-kyorindo-stg.iam.gserviceaccount.com
+    --oidc-service-account-email=cloud-functions-invoke@jbtob-looker-$(cat _END_OF_PROJECT_ID).iam.gserviceaccount.com
 
 # -----------------------------------------------BigQuery データセット
 # BigQueryのデータセットlookerを作成
