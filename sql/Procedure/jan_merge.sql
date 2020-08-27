@@ -14,7 +14,7 @@ BEGIN
         j2.jbtob_chk = j1.jbtob_chk,
         j2.maker_code = j1.maker_code,
         j2.brand_code = j1.brand_code,
-        j2.SOO_item = j1.SOO_item,
+        j2.JICFS_item = j1.JICFS_item,
         j2.dummy = j1.dummy
       WHEN NOT MATCHED
       THEN
@@ -25,8 +25,8 @@ BEGIN
         jbtob_chk,
         maker_code,
         brand_code,
-        SOO_item,
+        JICFS_item,
         dummy)
     VALUES
-      (jan_code,jan_name,item_code,jbtob_chk,maker_code,brand_code,SOO_item,dummy);
+      (jan_code,jan_name,item_code,jbtob_chk,maker_code,brand_code,JICFS_item,dummy);
 END;
