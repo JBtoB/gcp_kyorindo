@@ -10,6 +10,12 @@ steps:
   entrypoint: 'bash'
   args: ['-c', 'echo "${TAG_NAME}" | sed "s/create-.*-\([^-]\{3\}\)-[0-9]*-[0-9]*/\1/g" > _ENV']
 
+# -----------------------------------------------Cloud Storage
+# Cloud Storage バケットにスキーマ・設定ファイルをインポート
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: 'bash'
+  args: ['-c', 'gsutil -m cp -r ./settings/ gs://jbtob-$(cat _JBTOB_PROJECT_NAME)-from-sybase-$(cat _ENV)-setting/']
+
 # -----------------------------------------------Cloud Functions
 # Cloud Functions bq_load_jobのデプロイ
 - name: 'gcr.io/cloud-builders/gcloud'
