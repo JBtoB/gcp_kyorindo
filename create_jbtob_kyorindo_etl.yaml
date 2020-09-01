@@ -115,6 +115,11 @@ steps:
   entrypoint: 'bash'
   args: ['-c', 'bq --location=US mk -d jbtob-looker-$(cat _JBTOB_PROJECT_NAME)-$(cat _ENV):looker_procedure']
 
+# BigQueryのデータセットtmpを作成
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: 'bash'
+  args: ['-c', 'bq --location=US mk -d jbtob-looker-$(cat _JBTOB_PROJECT_NAME)-$(cat _ENV):tmp']
+
 # -----------------------------------------------BigQuery テーブル
 # BigQueryのテーブルlooker.brandを作成
 - name: 'gcr.io/cloud-builders/gcloud'
@@ -331,4 +336,3 @@ steps:
 
 options:
   env: [PYTHONIOENCODING=utf-8]
-  
