@@ -328,3 +328,7 @@ steps:
     --params='{"query": "CALL looker_procedure.delete_old_data_monthly();"}' \
     --schedule="first day of month 18:00" \
     --location=US 
+
+options:
+  env: [PYTHONIOENCODING=utf-8]
+  

@@ -289,3 +289,6 @@ steps:
     --schedule="first day of month 18:00" \
     --location=US \
     $(cat _DELET_TRANSACTION_SOURCE_MONTHLY_RESOUCE_NAME)
+
+options:
+  env: [PYTHONIOENCODING=utf-8]
