@@ -174,7 +174,7 @@ steps:
 # BigQueryのテーブルlooker.transaction_sourceを作成
 - name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: 'bash'
-  args: ['-c', 'bq mk --table jbtob-looker-$(cat _JBTOB_PROJECT_NAME)-$(cat _ENV):looker.transaction_source ./settings/transaction/schema.json']
+  args: ['-c', 'bq mk --table --time_partitioning_type=DAY jbtob-looker-$(cat _JBTOB_PROJECT_NAME)-$(cat _ENV):looker.transaction_source ./settings/transaction/schema.json']
 
 # -----------------------------------------------BigQuery Procedure
 # jan_table_createをデプロイ
