@@ -23,7 +23,7 @@ steps:
   args:
   - '-c'
   - |
-    gcloud functions deploy bq_load_jb \
+    gcloud functions deploy bq_load_job \
     --entry-point=main \
     --source=./CloudFunctions/bq_load_job \
     --project=jbtob-looker-$(cat _JBTOB_PROJECT_NAME)-$(cat _ENV) \
