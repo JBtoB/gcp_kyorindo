@@ -2,12 +2,12 @@
     {
       "name": "organization", 
       "type": "STRING",
-      "mode": "REQUIRED"
+      "mode": "NULLABLE"
     }, 
     {
       "name": "item_code", 
       "type": "STRING",
-      "mode": "REQUIRED"
+      "mode": "NULLABLE"
     },
     {
       "name": "item_code2", 
@@ -27,6 +27,6 @@
     {
       "name": "dummy", 
       "type": "STRING",
-      "mode": "REQUIRED"
+      "mode": "NULLABLE"
     }
   ]

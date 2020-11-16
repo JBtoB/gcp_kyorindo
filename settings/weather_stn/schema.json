@@ -2,16 +2,16 @@
     {
       "name": "office_code", 
       "type": "STRING",
-      "mode": "REQUIRED"
+      "mode": "NULLABLE"
     }, 
     {
       "name": "stn", 
       "type": "STRING",
-      "mode": "REQUIRED"
+      "mode": "NULLABLE"
     }, 
     {
       "name": "dummy", 
       "type": "STRING",
-      "mode": "REQUIRED"
+      "mode": "NULLABLE"
     }
   ]
