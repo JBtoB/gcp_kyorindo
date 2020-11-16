@@ -1,7 +1,7 @@
 # biz-jbtob-kyorindo-etl
 JBtoB-杏林堂薬局のDWH構築
 
-機能としては以下のふたつ\
+機能としては以下のふたつ
 1. GCSトリガーにより起動するbq load用のCloud Functions
 2. 取り込んだBigQueryテーブルに対して洗替処理を行うScheduled Query
 ## schema.jsonの必須指定項目
@@ -86,10 +86,10 @@ $ URI=[Cloud FunctionsのURL]
 
 # HTTPリクエストのボディ
 # テーブルのバックアップ用のとき
-$ MESSAGE_BODY=‘{“target_project_id”:“jbtob-looker-kyorindo-prd”, “target_dataset”:“looker_backup”, “source_dataset”:“looker”,“table_names”:[“brand”,“excode1”,“excode2",“item”,“jan”,“maker”,“member”,“office”,“old_new_id”,“JICFS_item”,“transaction”,“transaction_summary”,“update”]}’
+$ MESSAGE_BODY=‘{“target_project_id”:“jbtob-looker-kyorindo-prd”, “target_dataset”:“looker_backup”, “source_dataset”:“looker”,“table_names”:[“brand”,“excode1”,“excode2",“item”,“jan”,“maker”,“member”,“office”,“old_new_id”,“JICFS_item”,“transaction”,“transaction_summary”,“update”, "Category_control", "weather_stn"]}’
 
 # poc環境へのコピー用のとき
-$ MESSAGE_BODY=‘{“target_project_id”:“jbtob-looker-kyorindo-poc”, “target_dataset”:“looker”, “source_dataset”:“looker”,“table_names”:[“brand”,“excode1”,“excode2",“item”,“jan”,“maker”,“member”,“office”,“old_new_id”,“JICFS_item”,“transaction”,“transaction_summary”,“update”]}’
+$ MESSAGE_BODY=‘{“target_project_id”:“jbtob-looker-kyorindo-poc”, “target_dataset”:“looker”, “source_dataset”:“looker”,“table_names”:[“brand”,“excode1”,“excode2",“item”,“jan”,“maker”,“member”,“office”,“old_new_id”,“JICFS_item”,“transaction”,“transaction_summary”,“update”, "Category_control", "weather_stn"]}’
 
 
 # Cloud Schdeulerのジョブを作成
