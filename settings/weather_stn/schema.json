@@ -1,0 +1,17 @@
+[
+    {
+      "name": "office_code", 
+      "type": "STRING",
+      "mode": "REQUIRED"
+    }, 
+    {
+      "name": "stn", 
+      "type": "STRING",
+      "mode": "REQUIRED"
+    }, 
+    {
+      "name": "dummy", 
+      "type": "STRING",
+      "mode": "REQUIRED"
+    }
+  ]
