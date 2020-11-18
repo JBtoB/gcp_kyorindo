@@ -1,0 +1,32 @@
+[
+    {
+      "name": "organization", 
+      "type": "STRING",
+      "mode": "NULLABLE"
+    }, 
+    {
+      "name": "item_code", 
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },
+    {
+      "name": "item_code2", 
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },  
+    {
+      "name": "item_code3", 
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },  
+    {
+      "name": "item_code4", 
+      "type": "STRING",
+      "mode": "NULLABLE"
+    },  
+    {
+      "name": "dummy", 
+      "type": "STRING",
+      "mode": "NULLABLE"
+    }
+  ]
