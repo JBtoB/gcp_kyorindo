@@ -101,6 +101,17 @@ $ gcloud scheduler jobs create http ${JOB} \
 --message-body ${MESSAGE_BODY}
 ```
 
+## BigQuery Procedureのデプロイ方法
+```
+$ project_id=[GCPプロジェクトID]
+
+$ Procedureファイルのパスを指定(例: ./sql/Procedure/jan_table_create.sql)
+procedure_path=[Procedureファイルのパス]
+
+$ bq query --project_id=${project_id} \
+--use_legacy_sql=false < ${procedure_path}
+```
+
 ## Scheduled Queryのデプロイ方法
 ### Scheduled Queryのcreate_pos_data(scripting_procedure.sql)をデプロイ
 ```
