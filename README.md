@@ -11,7 +11,7 @@ schema.jsonには以下3つの項目について必ず指定する
 "mode"
 ## Cloud Functions のデプロイ方法
 
-### bq_load_jbのデプロイ
+### bq_load_jobのデプロイ
 以下のコマンドを実行する
 ```
 $ project_id=[GCPプロジェクトID]
@@ -70,7 +70,7 @@ $ gcloud functions deploy ${function_name} \
 ## Cloud Scheduler のデプロイ方法
 ```
 # Cloud Functionsを起動させるためのCloud Scheduler設定
-# App Engine アプリを作成
+# App Engine アプリを作成(既に作成済みの場合はスキップ)
 $ gcloud app create --region=us-central
 
 # Cloud Schedulerのジョブの名前
@@ -98,7 +98,8 @@ $ gcloud scheduler jobs create http ${JOB} \
 --uri ${URI} \
 --http-method POST \
 --time-zone Asia/Tokyo \
---message-body ${MESSAGE_BODY}
+--message-body ${MESSAGE_BODY} \
+--project ${project_id}
 ```
 
 ## BigQuery Procedureのデプロイ方法
