@@ -86,10 +86,10 @@ $ URI=[Cloud FunctionsのURL]
 
 # HTTPリクエストのボディ
 # テーブルのバックアップ用のとき
-$ MESSAGE_BODY=‘{“target_project_id”:“jbtob-looker-kyorindo-prd”, “target_dataset”:“looker_backup”, “source_dataset”:“looker”,“table_names”:[“brand”,“excode1”,“excode2",“item”,“jan”,“maker”,“member”,“office”,“old_new_id”,“JICFS_item”,“transaction”,“transaction_summary”,“update”, "Category_control", "weather_stn"]}’
+$ MESSAGE_BODY='{"target_project_id":"jbtob-looker-kyorindo-prd", "target_dataset":"looker_backup", "source_dataset":"looker","table_names":["brand","excode1","excode2","item","jan","maker","member","office","old_new_id","JICFS_item","transaction","transaction_summary","update", "Category_control", "weather_stn"]}'
 
 # poc環境へのコピー用のとき
-$ MESSAGE_BODY=‘{“target_project_id”:“jbtob-looker-kyorindo-poc”, “target_dataset”:“looker”, “source_dataset”:“looker”,“table_names”:[“brand”,“excode1”,“excode2",“item”,“jan”,“maker”,“member”,“office”,“old_new_id”,“JICFS_item”,“transaction”,“transaction_summary”,“update”, "Category_control", "weather_stn"]}’
+$ MESSAGE_BODY='{"target_project_id":"jbtob-looker-kyorindo-poc", "target_dataset":"looker", "source_dataset":"looker","table_names":["brand","excode1","excode2","item","jan","maker","member","office","old_new_id","JICFS_item","transaction","transaction_summary","update", "Category_control", "weather_stn"]}'
 
 
 # Cloud Schdeulerのジョブを作成
