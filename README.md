@@ -102,4 +102,69 @@ $ gcloud scheduler jobs create http ${JOB} \
 ```
 
 ## Scheduled Queryのデプロイ方法
-後で追記
+### Scheduled Queryのcreate_pos_data(scripting_procedure.sql)をデプロイ
+```
+$ project_id=[GCPプロジェクトID]
+
+# Scheduled Queryに使用するサービスアカウントIDを指定
+$ service_account_name=[サービスアカウントID]
+
+$ bq mk --transfer_config \
+--project_id=${project_id} \
+--display_name=create_pos_data \
+--data_source=scheduled_query \
+--params='{"query": "CALL looker_procedure.scripting_procedure();"}' \
+--schedule="everyday 22:00" \
+--location=US \
+--service_account_name=${service_account_name}
+```
+### Scheduled Queryのcreate_pos_data_retry1(scripting_retry_procedure.sql)をデプロイ
+```
+$ project_id=[GCPプロジェクトID]
+
+# Scheduled Queryに使用するサービスアカウントIDを指定
+$ service_account_name=[サービスアカウントID]
+
+$ bq mk --transfer_config \
+--project_id=${project_id}  \
+--display_name=create_pos_data_retry1 \
+--data_source=scheduled_query \
+--params='{"query": "CALL looker_procedure.scripting_retry_procedure();"}' \
+--schedule="everyday 22:40" \
+--location=US \
+--service_account_name=${service_account_name}
+```
+
+### Scheduled Queryのcreate_pos_data_retry2(scripting_retry_procedure.sql)をデプロイ
+```
+$ project_id=[GCPプロジェクトID]
+
+# Scheduled Queryに使用するサービスアカウントIDを指定
+$ service_account_name=[サービスアカウントID]
+
+$ bq mk --transfer_config \
+--project_id=${project_id}  \
+--display_name=create_pos_data_retry2 \
+--data_source=scheduled_query \
+--params='{"query": "CALL looker_procedure.scripting_retry_procedure();"}' \
+--schedule="everyday 23:20" \
+--location=US \
+--service_account_name=${service_account_name}
+```
+
+### Scheduled Queryのdelete_old_data(delete_old_data_monthly.sql)をデプロイ
+```
+$ project_id=[GCPプロジェクトID]
+
+# Scheduled Queryに使用するサービスアカウントIDを指定
+$ service_account_name=[サービスアカウントID]
+
+$ bq mk --transfer_config \
+--project_id=${project_id}  \
+--display_name=delete_transaction_source_monthly \
+--data_source=scheduled_query \
+--params='{"query": "CALL looker_procedure.delete_old_data_monthly();"}' \
+--schedule="first day of month 18:00" \
+--location=US \
+--service_account_name=${service_account_name}
+```
